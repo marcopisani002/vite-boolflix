@@ -1,7 +1,8 @@
 <template >
+   <AppHeader></AppHeader>
   <div class="container">
-    <h1 class="text-center mt-5 fw-bold">BOOLFLIX</h1>
-    <AppHeader></AppHeader>
+
+   
     <AppMain></AppMain>
   </div>
 </template>
