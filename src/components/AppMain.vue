@@ -24,7 +24,7 @@ export default {
     methods: {
 
     },
-    created() {
+    mounted() {
 
         fetchMovies();
 
