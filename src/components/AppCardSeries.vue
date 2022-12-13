@@ -5,7 +5,7 @@
         
 
             <!-- <div class="card-body text-white">
-                <h5 class="card-title fw-bold">{{ character.original_title }}</h5>
+                <h5 class="card-title fw-bold">{{ character.original_name }}</h5>
                 <p class="card-text text-secondary">{{ character.vote_average }}</p>
             </div> -->
 
@@ -20,7 +20,7 @@
 <script>
 import { store } from "../store";
 export default {
-    name: "AppCardMovie",
+    name: "AppCardSeries",
     props: {
 
         character: {
