@@ -1,4 +1,3 @@
-
 <template >
     <div>
         <h4 class="text-white fw-bold mb-4">Film</h4>
@@ -34,18 +33,12 @@ export default {
             store,
         };
     },
-
     methods: {
-
     },
     mounted() {
-
         fetchMovies();
-
-
     },
 }
 </script>
 <style lang="scss">
-
 </style>

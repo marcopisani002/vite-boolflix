@@ -6,7 +6,7 @@
     <form class="d-flex" role="search" @submit.prevent="onSearchClick">
       <input class="form-control me-2 bg-dark text-white" type="search" placeholder="cerca film/serie TV" aria-label="Search" name="title" v-model="store.inputTitle">
       
-      <button class="btn btn-outline-danger" type="button">Cerca</button>
+      <button class="btn btn-outline-danger" type="submit">Cerca</button>
     </form>
   </div>
 </nav>
@@ -37,7 +37,6 @@ export default {
   }
 }
   
-
 </script>
 <style lang="scss">
     
