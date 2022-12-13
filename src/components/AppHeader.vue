@@ -11,6 +11,7 @@
   </div>
 </nav>
     </div>
+    
 </template>
 <script>
 import { store  } from "../store";
