@@ -17,6 +17,7 @@ export function fetchMovies() {
     const popularMovies = "/movie/popular"
     const popularSeries = "/tv/popular"
     const searchMovie= "/search/movie"
+    const searchTv="/search/TV"
    
     axios.get(rootUrl + searchMovie, {
         params: {
@@ -33,10 +34,10 @@ export function fetchMovies() {
         })
 
 
-        axios.get(rootUrl + popularSeries, {
+        axios.get(rootUrl + searchTv, {
             params: {
                 api_key: apiKey,
-    
+                query: store.inputTitle
             }
     
     
