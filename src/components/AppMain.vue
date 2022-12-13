@@ -1,7 +1,7 @@
 
 <template >
     <div>
-        <h4 class="text-white fw-bold">Film</h4>
+        <h4 class="text-white fw-bold mb-4">Film</h4>
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col" v-for="(singleCharacter, index) in store.movies" :key="index">
@@ -10,9 +10,9 @@
     </div>
 
     <div>
-        <h4 class="text-white fw-bold mt-5">Serie TV</h4>
+        <h4 class="text-white fw-bold mt-5 mb-4">Serie TV</h4>
     </div>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
         <div class="col" v-for="(singleCharacter, index) in store.series" :key="index">
             <AppCardSeries  :character="singleCharacter"></AppCardSeries>
         </div>

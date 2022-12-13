@@ -3,10 +3,11 @@ import axios from "axios";
 
 export const store = reactive({
    imageDef:{ defaultImg:"https://image.tmdb.org/t/p/original"},
-   
+   inputTitle: "",
     movies: [],
     series: [],
-    searchText: []
+   activeFilters:null,
+   OnActiveFilters: null
 
 });
 
@@ -15,11 +16,12 @@ export function fetchMovies() {
     const rootUrl = "https://api.themoviedb.org/3"
     const popularMovies = "/movie/popular"
     const popularSeries = "/tv/popular"
+    const searchMovie= "/search/movie"
    
-    axios.get(rootUrl + popularMovies, {
+    axios.get(rootUrl + searchMovie, {
         params: {
             api_key: apiKey,
-
+            query: store.inputTitle
         }
 
 

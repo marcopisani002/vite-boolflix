@@ -1,5 +1,5 @@
 <template >
-   <AppHeader></AppHeader>
+   <AppHeader @search="activeFilters"></AppHeader>
   <div class="container">
 
    
@@ -22,6 +22,11 @@ export default {
   computed: {
   },
   methods: {
+    activeFilters (onActiveFilters) {
+        this.store.activeFilters = onActiveFilters
+       fetchMovies ();
+        console.log (onActiveFilters);
+    }
     
   }
   

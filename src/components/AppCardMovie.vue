@@ -1,7 +1,7 @@
 <template>
     <div class="card bg-dark">
 
-        <img :src="store.imageDef.defaultImg + character.backdrop_path" class="card-img-top" alt="...">
+        <img  :src="store.imageDef.defaultImg + character.backdrop_path" class="card-img-top" alt="...">
         
 
             <!-- <div class="card-body text-white">
