@@ -2,12 +2,12 @@ import { reactive } from "vue";
 import axios from "axios";
 
 export const store = reactive({
-   imageDef:{ defaultImg:"https://image.tmdb.org/t/p/original"},
-   inputTitle: "",
+    imageDef: { defaultImg: "https://image.tmdb.org/t/p/original" },
+    inputTitle: "",
     movies: [],
     series: [],
-   activeFilters:null,
-   OnActiveFilters: null
+    activeFilters: null,
+    OnActiveFilters: null
 
 });
 
@@ -16,9 +16,26 @@ export function fetchMovies() {
     const rootUrl = "https://api.themoviedb.org/3"
     const popularMovies = "/movie/popular"
     const popularSeries = "/tv/popular"
-    const searchMovie= "/search/movie"
-    const searchTv="/search/TV"
-   
+    const searchMovie = "/search/movie"
+    const searchTv = "/search/TV"
+
+    //FILM POPOLARI
+    axios.get(rootUrl + popularMovies, {
+        params: {
+            api_key: apiKey,
+
+        }
+
+
+    })
+        .then((resp) => {
+
+            store.movies = resp.data.results;
+            console.log(resp);
+        })
+
+
+    // RICERCA FILM
     axios.get(rootUrl + searchMovie, {
         params: {
             api_key: apiKey,
@@ -34,19 +51,23 @@ export function fetchMovies() {
         })
 
 
-        axios.get(rootUrl + searchTv, {
-            params: {
-                api_key: apiKey,
-                query: store.inputTitle
-            }
-    
-    
+
+  
+
+    //RICERCA SERIE TV
+    axios.get(rootUrl + popularSeries, {
+        params: {
+            api_key: apiKey,
+            query: store.inputTitle
+        }
+
+
+    })
+        .then((resp) => {
+
+            store.series = resp.data.results;
+            console.log(resp);
         })
-            .then((resp) => {
-    
-                store.series = resp.data.results;
-                console.log(resp);
-            })
 }
 
 

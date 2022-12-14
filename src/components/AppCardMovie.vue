@@ -1,5 +1,5 @@
 <template>
-    <p><span :class="'fi fi-' + getFlag(character.original_language)"></span></p>
+
     <div class="card position-relative border-0">
         <div v-if="character.poster_path === null">
             <img src="../Netflix-new-icon.png" class="my-img">
@@ -14,15 +14,18 @@
             <h5 class="card-title "><span class="text-danger fw-bold  ">TITLE:</span> <br> {{ character.original_title
             }}</h5>
             <div class="mb-2">
-                <i class="fa-solid fa-star" v-for="placeholder in allStars"></i>
-                <i class="fa-regular fa-star" v-for="placeholder in noneStars"></i>
+                <i class="fa-solid fa-star" v-for="stars in allStars"></i>
+                <i class="fa-regular fa-star" v-for="stars in noneStars"></i>
             </div>
 
             <p class="card-text text-secondary "> <span class="text-danger fw-bold me-3">OVERVIEW:</span> <br>
-            {{ character.overview }}</p>
+                {{ character.overview }}</p>
 
 
-            <div>{{ character.original_language }}</div>
+            <div>
+                <span class="text-danger fw-bold ">LANG:</span> <br> 
+                <span :class="' fi fi-' + movieLanguage(character.original_language)"></span>
+            </div>
         </div>
     </div>
 
@@ -45,17 +48,17 @@ export default {
     computed: {
     },
     methods: {
-        getFlag(country) {
-            if (country === 'en') {
+        movieLanguage(lang) {
+            if (lang === 'en') {
                 return 'gb';
-            } else if (country === 'uk') {
+            } else if (lang === 'uk') {
                 return 'ua';
-            } else if (country === 'hi') {
+            } else if (lang === 'hi') {
                 return 'in';
-            } else if (country === 'ja') {
+            } else if (lang === 'ja') {
                 return 'jp';
             } else {
-                return country;
+                return lang;
             }
         },
         starAverage() {
@@ -64,10 +67,10 @@ export default {
             const starRate = (Math.floor(this.character.vote_average / 2))
             const numZero = 5 - starRate;
             for (let i = 0; i < starRate; i++) {
-                this.allStars.push('placeHolder')
+                this.allStars.push('stars')
             }
             for (let i = 0; i < numZero; i++) {
-                this.noneStars.push('placeHolder')
+                this.noneStars.push('stars')
             }
 
         }
@@ -119,9 +122,9 @@ export default {
         }
 
     }
-.fa-star{
-color: yellow;
-}
-}
 
+    .fa-star {
+        color: yellow;
+    }
+}
 </style>
