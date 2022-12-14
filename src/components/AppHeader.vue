@@ -3,6 +3,7 @@
         <nav class="navbar bg-black">
   <div class="container-fluid">
     <a class="navbar-brand fw-bold text-danger">BOOLFLIX</a>
+   
     <form class="d-flex" role="search" @submit.prevent="onSearchClick" >
       <input class="form-control me-2 bg-dark text-white" type="search" placeholder="cerca film/serie TV" aria-label="Search" name="title" v-model="store.inputTitle">
       
@@ -21,12 +22,9 @@ export default {
       store,
        filters: {
        original_title: "",
-     
+       original_name: ""
        },
-       filtersSeries: {
-       original_name: "",
-     
-       }
+       
     };
   },
   emits: ["search"],
@@ -39,6 +37,7 @@ export default {
        this.$emit("search", { ...this.filters });
       
     },
+    
    
   }
 }

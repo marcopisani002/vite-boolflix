@@ -1,7 +1,6 @@
 <template >
   <AppHeader @search="activeFilters"></AppHeader>
  <div class="container">
-
   
    <AppMain></AppMain>
  </div>
@@ -14,7 +13,7 @@ export default {
    components: { AppHeader, AppMain },
    data () {
    return {
-     welcome: "Welcome Boolean",
+     welcome: "Welcome Boolflixers",
      store
    };
  },
@@ -25,8 +24,8 @@ export default {
        this.store.activeFilters = onActiveFilters
       fetchMovies ();
        console.log (onActiveFilters);
-   }
-   
+   },
+  
  }
  
 };
