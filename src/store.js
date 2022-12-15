@@ -6,6 +6,7 @@ export const store = reactive({
     inputTitle: "",
     movies: [],
     series: [],
+    loading: false,
     activeFilters: null,
     OnActiveFilters: null
 
@@ -28,10 +29,12 @@ export function fetchMovies() {
 
 
     })
+    
         .then((resp) => {
 
             store.movies = resp.data.results;
             console.log(resp);
+      
         })
 
 
@@ -69,5 +72,9 @@ export function fetchMovies() {
             console.log(resp);
         })
 }
+
+
+
+
 
 

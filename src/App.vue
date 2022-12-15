@@ -4,13 +4,15 @@
   
    <AppMain></AppMain>
  </div>
+ 
 </template>
 <script>
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
-import { fetchMovies, store } from "./store";
+
+import { fetchMovies, store, } from "./store";
 export default {
-   components: { AppHeader, AppMain },
+   components: { AppHeader, AppMain,  },
    data () {
    return {
      welcome: "Welcome Boolflixers",
@@ -23,6 +25,7 @@ export default {
    activeFilters (onActiveFilters) {
        this.store.activeFilters = onActiveFilters
       fetchMovies ();
+     
        console.log (onActiveFilters);
    },
   

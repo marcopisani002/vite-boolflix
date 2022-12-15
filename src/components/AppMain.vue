@@ -1,6 +1,6 @@
 <template >
     <div>
-        <h4 class="text-white fw-bold mb-4">Movie </h4>
+        <h4 class="text-white fw-bold mb-4">Movies </h4>
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col" v-for="(singleCharacter, index) in store.movies" :key="index">

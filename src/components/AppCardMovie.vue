@@ -18,7 +18,7 @@
                 <i class="fa-regular fa-star" v-for="stars in noneStars"></i>
             </div>
 
-            <p class="card-text text-secondary "> <span class="text-danger fw-bold me-3">OVERVIEW:</span> <br>
+            <p class="card-text  "> <span class="text-danger fw-bold me-3">OVERVIEW:</span> <br>
                 {{ character.overview }}</p>
 
 
@@ -118,7 +118,9 @@ export default {
         .my-card {
             z-index: 4;
             overflow-y: auto;
-            background-color: rgba(0, 0, 0, 0.637)
+            background-color: rgba(0, 0, 0, 0.637);
+            color: rgb(231, 162, 162);
+            
         }
 
     }

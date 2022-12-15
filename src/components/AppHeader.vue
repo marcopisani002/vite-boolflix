@@ -34,6 +34,7 @@ export default {
   methods: {
      onSearchClick () {
         fetchMovies();
+       
        this.$emit("search", { ...this.filters });
       
     },
